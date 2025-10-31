@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { authMiddleware } from "../middleware/auth-middleware.js";
 import {
   createNotes,
   deleteNoteById,
@@ -7,7 +6,7 @@ import {
   getNoteById,
   updateNoteById,
 } from "../controllers/notes.controller.js";
-import { notes } from "../db/schema/notes.js";
+import { authMiddleware } from "../middleware/auth-middleware.js";
 
 const notesRoutes = new Hono();
 
